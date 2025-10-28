@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "433810814971",
+    "project_id": "zytronic-whatsapp-task",
+    "storage_bucket": "zytronic-whatsapp-task.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433810814971:android:b8081cd12f8f925ba07d5e",
+        "android_client_info": {
+          "package_name": "com.example.zytronic_whatsapp_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3zuewK8eXeWVx1_zc9I-u68xQzQYmmY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

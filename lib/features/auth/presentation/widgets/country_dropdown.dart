@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zytronic_whatsapp_task/config/theme/textStyles.dart';
 
 class CountryDropdown extends StatelessWidget {
   final String selectedCountry;
@@ -16,7 +17,7 @@ class CountryDropdown extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: Color(0xFF00A884), width: 2.w),
+          bottom: BorderSide(color: Theme.of(context).primaryColor, width: 2.w),
         ),
       ),
       child: DropdownButton<String>(
@@ -24,8 +25,8 @@ class CountryDropdown extends StatelessWidget {
         isExpanded: true,
         underline: SizedBox(),
         icon: Icon(Icons.arrow_drop_down, size: 24.sp),
-        style: TextStyle(fontSize: 16.sp, color: Colors.black),
-        items: ['India', 'United States', 'United Kingdom', 'Egypt']
+        style: AppTextStyles.bodyLarge(context),
+        items: ['Egypt', 'United States', 'United Kingdom', 'India']
             .map(
               (country) =>
                   DropdownMenuItem(value: country, child: Text(country)),

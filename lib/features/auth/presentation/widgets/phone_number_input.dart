@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zytronic_whatsapp_task/config/theme/textStyles.dart';
 
 class PhoneNumberInput extends StatelessWidget {
   final TextEditingController controller;
@@ -15,7 +16,10 @@ class PhoneNumberInput extends StatelessWidget {
           width: 60.w,
           decoration: BoxDecoration(
             border: Border(
-              bottom: BorderSide(color: Color(0xFF00A884), width: 2.w),
+              bottom: BorderSide(
+                color: Theme.of(context).primaryColor,
+                width: 2.w,
+              ),
             ),
           ),
           child: Row(
@@ -23,10 +27,7 @@ class PhoneNumberInput extends StatelessWidget {
             children: [
               Icon(Icons.add, size: 16.sp),
               SizedBox(width: 4.w),
-              Text(
-                '20',
-                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
-              ),
+              Text('20', style: AppTextStyles.titleMedium(context)),
             ],
           ),
         ),
@@ -38,13 +39,22 @@ class PhoneNumberInput extends StatelessWidget {
             style: TextStyle(fontSize: 16.sp),
             decoration: InputDecoration(
               border: UnderlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFF00A884), width: 2.w),
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                  width: 2.w,
+                ),
               ),
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFF00A884), width: 2.w),
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                  width: 2.w,
+                ),
               ),
               focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFF00A884), width: 2.w),
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                  width: 2.w,
+                ),
               ),
             ),
           ),

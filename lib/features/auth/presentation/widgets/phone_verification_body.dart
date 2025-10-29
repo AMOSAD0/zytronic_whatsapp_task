@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zytronic_whatsapp_task/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:zytronic_whatsapp_task/features/auth/presentation/bloc/auth_event.dart';
-import 'package:zytronic_whatsapp_task/features/auth/presentation/widgets/carrier_charges_text.dart';
 import 'package:zytronic_whatsapp_task/features/auth/presentation/widgets/country_dropdown.dart';
 import 'package:zytronic_whatsapp_task/features/auth/presentation/widgets/next_button.dart';
 import 'package:zytronic_whatsapp_task/features/auth/presentation/widgets/phone_number_description.dart';
@@ -19,7 +18,7 @@ class PhoneVerificationBody extends StatefulWidget {
 
 class _PhoneVerificationBodyState extends State<PhoneVerificationBody> {
   final TextEditingController _phoneController = TextEditingController();
-  String selectedCountry = 'India';
+  String selectedCountry = 'Egypt';
 
   @override
   void dispose() {
@@ -49,8 +48,7 @@ class _PhoneVerificationBodyState extends State<PhoneVerificationBody> {
             ),
             SizedBox(height: 16.h),
             PhoneNumberInput(controller: _phoneController),
-            SizedBox(height: 8.h),
-            CarrierChargesText(),
+
             SizedBox(height: 300.h),
             NextButton(
               onPressed: () {

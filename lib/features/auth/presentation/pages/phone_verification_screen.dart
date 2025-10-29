@@ -15,23 +15,15 @@ class PhoneVerificationScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt<AuthBloc>(),
       child: Scaffold(
-        // backgroundColor: Colors.white,
-        appBar: AppBar(
-          // backgroundColor: Colors.white,
-          elevation: 0,
-          actions: [
-            IconButton(
-              icon: Icon(Icons.more_vert, color: Colors.black),
-              onPressed: () {},
-            ),
-          ],
-        ),
+        appBar: AppBar(elevation: 0),
         body: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is OtpSent) {
               _verificationId = state.verificationId;
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('تم إرسال كود التحقق')),
+                const SnackBar(
+                  content: Text('Verification code has been sent.'),
+                ),
               );
             }
 

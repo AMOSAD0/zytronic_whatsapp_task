@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zytronic_whatsapp_task/config/theme/textStyles.dart';
 
 class PhoneNumberDescription extends StatelessWidget {
   const PhoneNumberDescription({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class PhoneNumberDescription extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: TextStyle(fontSize: 14.sp, color: Colors.black87),
+        style: AppTextStyles.bodyMedium(context),
         children: [
           TextSpan(text: 'WhatsApp will need to verify your phone number. '),
           TextSpan(

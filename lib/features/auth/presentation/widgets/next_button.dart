@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zytronic_whatsapp_task/config/theme/textStyles.dart';
 
 class NextButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -11,18 +12,11 @@ class NextButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xFF00A884),
+        backgroundColor: Theme.of(context).primaryColor,
         padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 12.h),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
       ),
-      child: Text(
-        'NEXT',
-        style: TextStyle(
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w600,
-          color: Colors.white,
-        ),
-      ),
+      child: Text('NEXT', style: AppTextStyles.buttonMedium(context)),
     );
   }
 }

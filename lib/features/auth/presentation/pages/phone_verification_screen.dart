@@ -22,12 +22,8 @@ class PhoneVerificationScreen extends StatelessWidget {
           listener: (context, state) {
             if (state is SignupPhone) {
               _verificationId = state.verificationId;
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Verification code has been sent.'),
-                ),
-              );
-              context.pushReplacementNamed(Constants.home);
+
+              context.goNamed(Constants.home);
             }
 
             if (state is AuthError) {

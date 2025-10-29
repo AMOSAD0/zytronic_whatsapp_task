@@ -12,26 +12,6 @@ class PhoneNumberInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 60.w,
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                color: Theme.of(context).primaryColor,
-                width: 2.w,
-              ),
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.add, size: 16.sp),
-              SizedBox(width: 4.w),
-              Text('20', style: AppTextStyles.titleMedium(context)),
-            ],
-          ),
-        ),
-        SizedBox(width: 16.w),
         Expanded(
           child: TextField(
             controller: controller,

@@ -1,16 +1,94 @@
-# zytronic_whatsapp_task
+# Zytronic WhatsApp-style Flutter App Clone
 
-A new Flutter project.
+**Candidate Name:** Ahmed Mossad  
+**Project:** WhatsApp-style Flutter App Clone  
+**Technology:** Flutter, Firebase Auth, Cloud Firestore
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Project Overview
 
-A few resources to get you started if this is your first Flutter project:
+This is a Flutter implementation of a WhatsApp-style messaging app, designed with **pixel-perfect UI**, clean architecture, and production-ready details.  
+The app includes **Home (chat list), Chat (conversation), and Stories (status) screens** with microinteractions and responsive design.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screens Implemented
+
+1. **Home Screen (Chat List)**
+
+   - Displays all conversations with avatars, last message, and timestamps.
+
+2. **Chat Screen (Conversation)**
+
+   - Real-time messaging with message bubbles, timestamps, and input field.
+   - Animated opening of chat and message sent feedback.
+
+3. **Stories Screen (Status)**
+   - Displays user stories with swipe gestures.
+   - Animated progress bar transitions between stories.
+
+---
+
+## Features
+
+- Pixel-perfect UI following WhatsApp design guidelines
+- Responsive layout using `flutter_screenutil`
+- Light and Dark mode support
+- Firebase Authentication (Phone number login)
+- Cloud Firestore for storing conversations and stories
+- Microinteractions:
+  - Chat opening animation
+  - Message sent animation
+  - Story progress bar animation
+- Clean Architecture & Bloc state management
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/AMOSAD0/zytronic_whatsapp_task.git
+
+```
+
+2. Install dependencies:
+
+```bash
+flutter pub get
+```
+
+3. Connect your Firebase project:
+
+   - Replace `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) with your Firebase credentials.
+
+4. Run the app:
+
+```bash
+flutter run
+```
+
+## Screenshots / Demo
+
+- `screenshots/Screenshot_20251029-174417.jpg`
+- `screenshots/Screenshot_20251029-174425.jpg`
+- `screenshots/Screenshot_20251029-174435.jpg`
+- `screenshots/Screenshot_20251029-174440.jpg`
+- `screenshots/Screenshot_20251029-174449.jpg`
+
+- Demo video: `demo/video.mp4`
+
+---
+
+## Author
+
+**Ahmed Mossad**
+
+---
+
+## Notes
+
+This project was created as part of the Zytronic Flutter Developer assessment task.  
+It follows best practices, clean code architecture, and demonstrates Flutter UI skills, Firebase integration, and microinteractions.

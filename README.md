@@ -72,11 +72,11 @@ flutter run
 
 ## Screenshots / Demo
 
- (screenshots/Screenshot_20251029-174417.jpg)
-- (screenshots/Screenshot_20251029-174425.jpg)
-- (screenshots/Screenshot_20251029-174435.jpg)
-- (screenshots/Screenshot_20251029-174440.jpg)
-- (screenshots/Screenshot_20251029-174449.jpg)
+- [](screenshots/Screenshot_20251029-174417.jpg)
+- [](screenshots/Screenshot_20251029-174425.jpg)
+- [](screenshots/Screenshot_20251029-174435.jpg)
+- [](screenshots/Screenshot_20251029-174440.jpg)
+- [](screenshots/Screenshot_20251029-174449.jpg)
 
 - Demo video: `demo/video.mp4`
 

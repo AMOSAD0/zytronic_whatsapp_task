@@ -72,7 +72,7 @@ flutter run
 
 ## Screenshots / Demo
 
-- (screenshots/Screenshot_20251029-174417.jpg)
+ (screenshots/Screenshot_20251029-174417.jpg)
 - (screenshots/Screenshot_20251029-174425.jpg)
 - (screenshots/Screenshot_20251029-174435.jpg)
 - (screenshots/Screenshot_20251029-174440.jpg)

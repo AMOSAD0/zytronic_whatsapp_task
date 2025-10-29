@@ -27,7 +27,7 @@ class PhoneVerificationScreen extends StatelessWidget {
                   content: Text('Verification code has been sent.'),
                 ),
               );
-              context.pushReplacementNamed(Constants.home);
+              context.goNamed(Constants.home);
             }
 
             if (state is AuthError) {

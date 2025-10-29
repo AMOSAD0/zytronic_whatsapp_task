@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zytronic_whatsapp_task/config/theme/textStyles.dart';
+import 'package:zytronic_whatsapp_task/features/app/bloc/theme_bloc.dart';
 import 'package:zytronic_whatsapp_task/features/chats/presentation/pages/chats_screen.dart';
 import 'package:zytronic_whatsapp_task/features/chats/presentation/pages/status_screen.dart';
 
@@ -39,14 +41,41 @@ class _HomeScreenState extends State<HomeScreen>
           SizedBox(width: 16.w),
           Icon(Icons.search),
           SizedBox(width: 16.w),
-          Icon(Icons.more_vert),
+
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'theme') {
+                context.read<ThemeBloc>().add(ToggleThemeEvent());
+              }
+            },
+            itemBuilder: (BuildContext context) {
+              final isDark =
+                  context.read<ThemeBloc>().state.themeMode == ThemeMode.dark;
+
+              return [
+                PopupMenuItem<String>(
+                  value: 'theme',
+                  child: Row(
+                    children: [
+                      const SizedBox(width: 10),
+                      Text(
+                        isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode',
+                      ),
+                    ],
+                  ),
+                ),
+              ];
+            },
+            icon: const Icon(Icons.more_vert),
+          ),
+
           SizedBox(width: 10.w),
         ],
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: Theme.of(context).colorScheme.primary,
-          labelColor: Theme.of(context).colorScheme.primary,
-
+          indicatorColor: Theme.of(context).colorScheme.onPrimary,
+          unselectedLabelColor: Theme.of(context).colorScheme.onPrimary,
+          labelColor: Theme.of(context).colorScheme.onPrimary,
           tabs: const [
             Tab(text: 'Chats'),
             Tab(text: 'Status'),

@@ -37,6 +37,7 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: primaryLight,
     scaffoldBackgroundColor: backgroundLight,
+
     colorScheme: const ColorScheme.light(
       primary: primaryLight,
       secondary: secondaryLight,
@@ -53,6 +54,13 @@ class AppTheme {
       elevation: 0,
       iconTheme: IconThemeData(color: Colors.white),
     ),
+    // tabBarTheme: TabBarThemeData(
+    //   labelColor: Colors.white, // لون النص النشط
+    //   unselectedLabelColor: AppTheme.iconLight, // لون النص الغير نشط
+    //   indicator: UnderlineTabIndicator(
+    //     borderSide: BorderSide(color: Colors.white, width: 2),
+    //   ),
+    // ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: backgroundLight,
       selectedItemColor: primaryLight,

@@ -19,24 +19,16 @@ class AuthRepositoryImpl implements AuthRepository {
   });
 
   @override
-  Future<Either<Failure, String>> sendOtp(String phoneNumber) async {
-    try {
-      final verificationId = await remoteDataSource.sendOtp(phoneNumber);
-      return Right(verificationId);
-    } catch (e) {
-      return Left(AuthFailure(e.toString()));
-    }
-  }
-
-  @override
-  Future<Either<Failure, UserEntity>> verifyOtp(
-    String verificationId,
-    String otp,
+  Future<Either<Failure, String>> signupPhone(
+    String phoneNumber,
+    String name,
   ) async {
     try {
-      final userModel = await remoteDataSource.verifyOtp(verificationId, otp);
-      await localDataSource.cacheUser(userModel);
-      return Right(userModel.toEntity());
+      final verificationId = await remoteDataSource.signupPhone(
+        phoneNumber,
+        name,
+      );
+      return Right(verificationId);
     } catch (e) {
       return Left(AuthFailure(e.toString()));
     }

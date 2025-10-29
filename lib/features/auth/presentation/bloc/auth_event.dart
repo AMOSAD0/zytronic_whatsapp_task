@@ -7,23 +7,14 @@ abstract class AuthEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class SendOtpEvent extends AuthEvent {
+class SignupPhoneEvent extends AuthEvent {
   final String phoneNumber;
+  final String name;
 
-  const SendOtpEvent(this.phoneNumber);
-
-  @override
-  List<Object> get props => [phoneNumber];
-}
-
-class VerifyOtpEvent extends AuthEvent {
-  final String verificationId;
-  final String otp;
-
-  const VerifyOtpEvent({required this.verificationId, required this.otp});
+  const SignupPhoneEvent({required this.phoneNumber, required this.name});
 
   @override
-  List<Object> get props => [verificationId, otp];
+  List<Object> get props => [phoneNumber, name];
 }
 
 class CheckAuthStatusEvent extends AuthEvent {

@@ -5,11 +5,11 @@ import 'package:zytronic_whatsapp_task/features/auth/presentation/pages/phone_ve
 import 'package:zytronic_whatsapp_task/features/chats/presentation/pages/home_sceen.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/chats',
+  initialLocation: '/phone_verification',
   routes: [
     GoRoute(
-      path: '/chats',
-      name: Constants.chats,
+      path: '/home',
+      name: Constants.home,
 
       pageBuilder: (context, state) => buildTransitionPage(const HomeScreen()),
     ),

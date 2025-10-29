@@ -14,10 +14,14 @@ class UserModel extends HiveObject {
   @HiveField(2)
   final DateTime createdAt;
 
+  @HiveField(3)
+  final String name;
+
   UserModel({
     required this.uid,
     required this.phoneNumber,
     required this.createdAt,
+    required this.name,
   });
 
   factory UserModel.fromFirebase(Map<String, dynamic> data) {
@@ -27,6 +31,7 @@ class UserModel extends HiveObject {
       createdAt: data['createdAt'] != null
           ? DateTime.parse(data['createdAt'])
           : DateTime.now(),
+      name: data['name'] ?? '',
     );
   }
 
@@ -34,18 +39,25 @@ class UserModel extends HiveObject {
     return {
       'uid': uid,
       'phoneNumber': phoneNumber,
+      'name': name,
       'createdAt': createdAt.toIso8601String(),
     };
   }
 
   UserEntity toEntity() {
-    return UserEntity(uid: uid, phoneNumber: phoneNumber, createdAt: createdAt);
+    return UserEntity(
+      uid: uid,
+      phoneNumber: phoneNumber,
+      name: name,
+      createdAt: createdAt,
+    );
   }
 
   factory UserModel.fromEntity(UserEntity entity) {
     return UserModel(
       uid: entity.uid,
       phoneNumber: entity.phoneNumber,
+      name: entity.name,
       createdAt: entity.createdAt,
     );
   }

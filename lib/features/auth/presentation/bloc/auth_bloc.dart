@@ -1,54 +1,39 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:zytronic_whatsapp_task/features/auth/domain/usecases/get_cached_user_use_case.dart';
-import 'package:zytronic_whatsapp_task/features/auth/domain/usecases/send_otp_use_case.dart';
+import 'package:zytronic_whatsapp_task/features/auth/domain/usecases/signup_phone_use_case.dart';
 import 'package:zytronic_whatsapp_task/features/auth/domain/usecases/signout_use_case.dart';
-import 'package:zytronic_whatsapp_task/features/auth/domain/usecases/verify_otp_use_case.dart';
 
 import 'auth_event.dart';
 import 'auth_state.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final SendOtpUseCase sendOtpUseCase;
-  final VerifyOtpUseCase verifyOtpUseCase;
+  final SignupPhoneUseCase signupPhoneUseCase;
   final GetCachedUserUseCase getCachedUserUseCase;
   final SignOutUseCase signOutUseCase;
 
   AuthBloc({
-    required this.sendOtpUseCase,
-    required this.verifyOtpUseCase,
+    required this.signupPhoneUseCase,
     required this.getCachedUserUseCase,
     required this.signOutUseCase,
   }) : super(AuthInitial()) {
-    on<SendOtpEvent>(_onSendOtp);
-    on<VerifyOtpEvent>(_onVerifyOtp);
+    on<SignupPhoneEvent>(_onSignupPhone);
     on<CheckAuthStatusEvent>(_onCheckAuthStatus);
     on<SignOutEvent>(_onSignOut);
   }
 
-  Future<void> _onSendOtp(SendOtpEvent event, Emitter<AuthState> emit) async {
-    emit(AuthLoading());
-
-    final result = await sendOtpUseCase(event.phoneNumber);
-
-    result.fold(
-      (failure) => emit(AuthError(failure.message)),
-      (verificationId) => emit(OtpSent(verificationId)),
-    );
-  }
-
-  Future<void> _onVerifyOtp(
-    VerifyOtpEvent event,
+  Future<void> _onSignupPhone(
+    SignupPhoneEvent event,
     Emitter<AuthState> emit,
   ) async {
     emit(AuthLoading());
 
-    final result = await verifyOtpUseCase(event.verificationId, event.otp);
+    final result = await signupPhoneUseCase(event.phoneNumber, event.name);
 
     result.fold(
       (failure) => emit(AuthError(failure.message)),
-      (user) => emit(AuthAuthenticated(user)),
+      (verificationId) => emit(SignupPhone(verificationId)),
     );
   }
 

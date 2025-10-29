@@ -54,7 +54,9 @@ class _PhoneVerificationBodyState extends State<PhoneVerificationBody> {
               onPressed: () {
                 final phone = _phoneController.text.trim();
                 if (phone.isNotEmpty) {
-                  context.read<AuthBloc>().add(SendOtpEvent(phone));
+                  context.read<AuthBloc>().add(
+                    SignupPhoneEvent(phoneNumber: phone, name: 'Ahmed'),
+                  );
                 }
               },
             ),

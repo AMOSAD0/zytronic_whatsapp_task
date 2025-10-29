@@ -72,11 +72,10 @@ flutter run
 
 ## Screenshots / Demo
 
-- ![app](screenshots/Screenshot_20251029-174417.jpg)
-- ![app](screenshots/Screenshot_20251029-174425.jpg)
-- ![app](screenshots/Screenshot_20251029-174435.jpg)
-- ![app](screenshots/Screenshot_20251029-174440.jpg)
-- ![app](screenshots/Screenshot_20251029-174449.jpg)
+<img src="screenshots/Screenshot_20251029-174425.jpg" alt="Home Screen" width="300" height="600">
+<img src="screenshots/Screenshot_20251029-174435.jpg" alt="Home Screen" width="300" height="600">
+<img src="screenshots/Screenshot_20251029-174440.jpg" alt="Home Screen" width="300" height="600">
+<img src="screenshots/Screenshot_20251029-174449.jpg" alt="Home Screen" width="300" height="600">
 
 - Demo video: `demo/video.mp4`
 

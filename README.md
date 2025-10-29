@@ -73,7 +73,7 @@ flutter run
 ## Screenshots / Demo
 
 
-  <video width="400" height="250" controls>
+  <video width="400" height="250">
     <source src="demo/demo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>

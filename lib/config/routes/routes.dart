@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zytronic_whatsapp_task/config/constants/constants.dart';
+import 'package:zytronic_whatsapp_task/features/auth/presentation/pages/phone_verification_screen.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/splash',
+  initialLocation: '/phone_verification',
   routes: [
     GoRoute(
-      path: '/splash',
-      name: 'splash',
-      // builder: (context, state) => const SplashPage(),
-      // pageBuilder: (context, state) => buildTransitionPage(const SplashPage()),
+      path: '/phone_verification',
+      name: Constants.phoneVerification,
+
+      pageBuilder: (context, state) =>
+          buildTransitionPage(const PhoneVerificationScreen()),
     ),
   ],
 );

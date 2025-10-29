@@ -3,15 +3,136 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles {
-  static String get fontFamily => GoogleFonts.roboto().fontFamily!;
+  // ============== Helper Methods ==============
 
-  static Color _getColor(
-    BuildContext context, {
-    required Color light,
-    required Color dark,
-  }) {
-    return Theme.of(context).brightness == Brightness.dark ? dark : light;
+  /// Get text color based on theme
+  static Color getTextColor(BuildContext context) {
+    return Theme.of(context).colorScheme.onSurface;
   }
+
+  /// Get secondary text color based on theme
+  static Color getSecondaryTextColor(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark
+        ? const Color(0xFF8696A0)
+        : const Color(0xFF667781);
+  }
+
+  /// Get primary color from theme
+  static Color getPrimaryColor(BuildContext context) {
+    return Theme.of(context).colorScheme.primary;
+  }
+
+  // ============== Display Styles (Large Headlines) ==============
+
+  static TextStyle displayLarge(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 57.sp,
+    fontWeight: FontWeight.w400,
+    color: getTextColor(context),
+    letterSpacing: -0.25,
+  );
+
+  static TextStyle displayMedium(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 45.sp,
+    fontWeight: FontWeight.w400,
+    color: getTextColor(context),
+  );
+
+  static TextStyle displaySmall(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 36.sp,
+    fontWeight: FontWeight.w400,
+    color: getTextColor(context),
+  );
+
+  // ============== Headline Styles ==============
+
+  static TextStyle headlineLarge(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 32.sp,
+    fontWeight: FontWeight.w700,
+    color: getTextColor(context),
+  );
+
+  static TextStyle headlineMedium(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 28.sp,
+    fontWeight: FontWeight.w600,
+    color: getTextColor(context),
+  );
+
+  static TextStyle headlineSmall(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w600,
+    color: getTextColor(context),
+  );
+
+  // ============== Title Styles ==============
+
+  static TextStyle titleLarge(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w500,
+    color: getTextColor(context),
+  );
+
+  static TextStyle titleMedium(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: getTextColor(context),
+    letterSpacing: 0.15,
+  );
+
+  static TextStyle titleSmall(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    color: getTextColor(context),
+    letterSpacing: 0.1,
+  );
+
+  // ============== Body Text Styles ==============
+
+  static TextStyle bodyLarge(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: getTextColor(context),
+    letterSpacing: 0.5,
+    height: 1.5,
+  );
+
+  static TextStyle bodyMedium(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+    color: getTextColor(context),
+    letterSpacing: 0.25,
+    height: 1.43,
+  );
+
+  static TextStyle bodySmall(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: getTextColor(context),
+    letterSpacing: 0.4,
+    height: 1.33,
+  );
+
+  // ============== Label Styles (Buttons, Tabs) ==============
+
+  static TextStyle labelLarge(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: getTextColor(context),
+    letterSpacing: 0.5,
+  );
+
+  static TextStyle labelMedium(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: getTextColor(context),
+    letterSpacing: 0.5,
+  );
+
+  static TextStyle labelSmall(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w500,
+    color: getTextColor(context),
+    letterSpacing: 0.5,
+  );
 
   // ============== App Bar Styles ==============
 
@@ -30,111 +151,34 @@ class AppTextStyles {
         : const Color(0xFFE0E0E0),
   );
 
-  // ============== Chat List Styles ==============
+  // ============== Button Text Styles ==============
 
-  static TextStyle chatListName(BuildContext context) => GoogleFonts.roboto(
+  static TextStyle buttonLarge(BuildContext context) => GoogleFonts.roboto(
     fontSize: 16.sp,
-    fontWeight: FontWeight.w500,
-    color: _getColor(
-      context,
-      light: const Color(0xFF000000),
-      dark: const Color(0xFFE9EDEF),
-    ),
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+    letterSpacing: 0.5,
   );
 
-  static TextStyle chatListMessage(BuildContext context) => GoogleFonts.roboto(
+  static TextStyle buttonMedium(BuildContext context) => GoogleFonts.roboto(
     fontSize: 14.sp,
-    fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF667781),
-      dark: const Color(0xFF8696A0),
-    ),
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+    letterSpacing: 0.5,
   );
 
-  static TextStyle chatListTime(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF667781),
-      dark: const Color(0xFF8696A0),
-    ),
-  );
-
-  static TextStyle unreadBadge(BuildContext context) => GoogleFonts.roboto(
+  static TextStyle buttonSmall(BuildContext context) => GoogleFonts.roboto(
     fontSize: 12.sp,
     fontWeight: FontWeight.w600,
     color: Colors.white,
+    letterSpacing: 0.5,
   );
 
-  // ============== Chat Message Styles ==============
-
-  static TextStyle messageText(BuildContext context, {required bool isMe}) =>
-      GoogleFonts.roboto(
-        fontSize: 15.sp,
-        fontWeight: FontWeight.w400,
-        color: isMe
-            ? _getColor(
-                context,
-                light: const Color(0xFF000000),
-                dark: const Color(0xFFE9EDEF),
-              )
-            : _getColor(
-                context,
-                light: const Color(0xFF000000),
-                dark: const Color(0xFFE9EDEF),
-              ),
-        height: 1.4,
-      );
-
-  static TextStyle messageTime(BuildContext context, {required bool isMe}) =>
-      GoogleFonts.roboto(
-        fontSize: 11.sp,
-        fontWeight: FontWeight.w400,
-        color: isMe
-            ? _getColor(
-                context,
-                light: const Color(0xFF667781),
-                dark: const Color(0xFF8696A0),
-              )
-            : _getColor(
-                context,
-                light: const Color(0xFF667781),
-                dark: const Color(0xFF8696A0),
-              ),
-      );
-
-  static TextStyle senderName(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 13.sp,
+  static TextStyle textButton(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 14.sp,
     fontWeight: FontWeight.w600,
-    color: _getColor(
-      context,
-      light: const Color(0xFF075E54),
-      dark: const Color(0xFF00A884),
-    ),
-  );
-
-  // ============== Status Styles ==============
-
-  static TextStyle statusName(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 15.sp,
-    fontWeight: FontWeight.w500,
-    color: _getColor(
-      context,
-      light: const Color(0xFF000000),
-      dark: const Color(0xFFE9EDEF),
-    ),
-  );
-
-  static TextStyle statusTime(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 13.sp,
-    fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF667781),
-      dark: const Color(0xFF8696A0),
-    ),
+    color: getPrimaryColor(context),
+    letterSpacing: 0.5,
   );
 
   // ============== Input Field Styles ==============
@@ -142,151 +186,193 @@ class AppTextStyles {
   static TextStyle inputText(BuildContext context) => GoogleFonts.roboto(
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF000000),
-      dark: const Color(0xFFE9EDEF),
-    ),
+    color: getTextColor(context),
+  );
+
+  static TextStyle inputLabel(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: getSecondaryTextColor(context),
   );
 
   static TextStyle inputHint(BuildContext context) => GoogleFonts.roboto(
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF667781),
-      dark: const Color(0xFF8696A0),
-    ),
+    color: getSecondaryTextColor(context),
   );
 
-  // ============== Contact Styles ==============
+  static TextStyle inputError(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: Theme.of(context).colorScheme.error,
+  );
 
-  static TextStyle contactName(BuildContext context) => GoogleFonts.roboto(
+  // ============== List Item Styles ==============
+
+  static TextStyle listTitle(BuildContext context) => GoogleFonts.roboto(
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
-    color: _getColor(
-      context,
-      light: const Color(0xFF000000),
-      dark: const Color(0xFFE9EDEF),
-    ),
+    color: getTextColor(context),
   );
 
-  static TextStyle contactStatus(BuildContext context) => GoogleFonts.roboto(
+  static TextStyle listSubtitle(BuildContext context) => GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF667781),
-      dark: const Color(0xFF8696A0),
-    ),
+    color: getSecondaryTextColor(context),
   );
 
-  // ============== Date Divider Styles ==============
-
-  static TextStyle dateDivider(BuildContext context) => GoogleFonts.roboto(
+  static TextStyle listCaption(BuildContext context) => GoogleFonts.roboto(
     fontSize: 12.sp,
-    fontWeight: FontWeight.w500,
-    color: _getColor(
-      context,
-      light: const Color(0xFF54656F),
-      dark: const Color(0xFF8696A0),
-    ),
+    fontWeight: FontWeight.w400,
+    color: getSecondaryTextColor(context),
   );
 
-  // ============== System Message Styles ==============
+  // ============== Chat Styles ==============
 
-  static TextStyle systemMessage(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 13.sp,
+  static TextStyle chatName(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: getTextColor(context),
+  );
+
+  static TextStyle chatMessage(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 14.sp,
     fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF54656F),
-      dark: const Color(0xFF8696A0),
-    ),
+    color: getSecondaryTextColor(context),
+  );
+
+  static TextStyle chatTime(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: getSecondaryTextColor(context),
+  );
+
+  static TextStyle messageText(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
+    color: getTextColor(context),
     height: 1.4,
   );
 
-  // ============== Button Text Styles ==============
+  static TextStyle messageTime(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w400,
+    color: getSecondaryTextColor(context),
+  );
 
-  static TextStyle buttonText(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 14.sp,
+  // ============== Badge & Chip Styles ==============
+
+  static TextStyle badge(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w600,
     color: Colors.white,
-    letterSpacing: 0.5,
   );
 
-  static TextStyle textButtonText(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w600,
-    color: _getColor(
-      context,
-      light: const Color(0xFF075E54),
-      dark: const Color(0xFF00A884),
-    ),
-    letterSpacing: 0.5,
-  );
-
-  // ============== Tab Text Styles ==============
-
-  static TextStyle tabText(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w600,
-    letterSpacing: 0.8,
-  );
-
-  // ============== Section Header Styles ==============
-
-  static TextStyle sectionHeader(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w600,
-    color: _getColor(
-      context,
-      light: const Color(0xFF075E54),
-      dark: const Color(0xFF00A884),
-    ),
-  );
-
-  // ============== Call Styles ==============
-
-  static TextStyle callName(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w500,
-    color: _getColor(
-      context,
-      light: const Color(0xFF000000),
-      dark: const Color(0xFFE9EDEF),
-    ),
-  );
-
-  static TextStyle callInfo(BuildContext context) => GoogleFonts.roboto(
+  static TextStyle chip(BuildContext context) => GoogleFonts.roboto(
     fontSize: 13.sp,
-    fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF667781),
-      dark: const Color(0xFF8696A0),
-    ),
+    fontWeight: FontWeight.w500,
+    color: getTextColor(context),
   );
 
-  // ============== Settings Styles ==============
+  // ============== Caption & Overline ==============
 
-  static TextStyle settingsTitle(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 16.sp,
+  static TextStyle caption(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF000000),
-      dark: const Color(0xFFE9EDEF),
-    ),
+    color: getSecondaryTextColor(context),
   );
 
-  static TextStyle settingsSubtitle(BuildContext context) => GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w400,
-    color: _getColor(
-      context,
-      light: const Color(0xFF667781),
-      dark: const Color(0xFF8696A0),
-    ),
+  static TextStyle overline(BuildContext context) => GoogleFonts.roboto(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    color: getSecondaryTextColor(context),
+    letterSpacing: 1.5,
   );
+
+  // ============== Custom Styles ==============
+
+  /// Create a completely custom text style
+  static TextStyle custom({
+    required BuildContext context,
+    double? fontSize,
+    FontWeight? fontWeight,
+    Color? color,
+    double? letterSpacing,
+    double? height,
+    double? wordSpacing,
+    TextDecoration? decoration,
+    Color? decorationColor,
+    FontStyle? fontStyle,
+  }) => GoogleFonts.roboto(
+    fontSize: fontSize?.sp ?? 14.sp,
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: color ?? getTextColor(context),
+    letterSpacing: letterSpacing,
+    height: height,
+    wordSpacing: wordSpacing,
+    decoration: decoration,
+    decorationColor: decorationColor,
+    fontStyle: fontStyle,
+  );
+
+  // ============== Text Style with Primary Color ==============
+
+  static TextStyle withPrimaryColor(
+    BuildContext context, {
+    double? fontSize,
+    FontWeight? fontWeight,
+  }) => GoogleFonts.roboto(
+    fontSize: fontSize?.sp ?? 14.sp,
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: getPrimaryColor(context),
+  );
+
+  // ============== Text Style with Secondary Color ==============
+
+  static TextStyle withSecondaryColor(
+    BuildContext context, {
+    double? fontSize,
+    FontWeight? fontWeight,
+  }) => GoogleFonts.roboto(
+    fontSize: fontSize?.sp ?? 14.sp,
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: getSecondaryTextColor(context),
+  );
+
+  // ============== Bold Styles ==============
+
+  static TextStyle bold(BuildContext context, {double? fontSize}) =>
+      GoogleFonts.roboto(
+        fontSize: fontSize?.sp ?? 14.sp,
+        fontWeight: FontWeight.w700,
+        color: getTextColor(context),
+      );
+
+  static TextStyle semiBold(BuildContext context, {double? fontSize}) =>
+      GoogleFonts.roboto(
+        fontSize: fontSize?.sp ?? 14.sp,
+        fontWeight: FontWeight.w600,
+        color: getTextColor(context),
+      );
+
+  static TextStyle medium(BuildContext context, {double? fontSize}) =>
+      GoogleFonts.roboto(
+        fontSize: fontSize?.sp ?? 14.sp,
+        fontWeight: FontWeight.w500,
+        color: getTextColor(context),
+      );
+
+  static TextStyle regular(BuildContext context, {double? fontSize}) =>
+      GoogleFonts.roboto(
+        fontSize: fontSize?.sp ?? 14.sp,
+        fontWeight: FontWeight.w400,
+        color: getTextColor(context),
+      );
+
+  static TextStyle light(BuildContext context, {double? fontSize}) =>
+      GoogleFonts.roboto(
+        fontSize: fontSize?.sp ?? 14.sp,
+        fontWeight: FontWeight.w300,
+        color: getTextColor(context),
+      );
 }
